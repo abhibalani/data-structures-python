@@ -7,10 +7,10 @@ class Queue:
         """Initialize the queue head"""
         self.head = None
 
-    def push(self, node):
+    def enqueue(self, node):
         """
-        Push the node inside queue
-        :param node: node to be pushed
+        Add the node inside queue
+        :param node: node to be enqueued
         :return: None
         """
         if not self.head:
@@ -23,7 +23,7 @@ class Queue:
 
         current.next = node
 
-    def pop(self):
+    def dequeue(self):
         """
         Method to remove first element from queue
         :return: value of removed element
@@ -35,6 +35,30 @@ class Queue:
         self.head = self.head.next
         print('Value removed is: ', value)
         return value
+
+    def peek(self):
+        """
+
+        :return:
+        """
+        current_node = self.head
+        previous_node = current_node
+
+        while current_node:
+            previous_node = current_node
+            current_node = current_node.next
+
+        return previous_node
+
+    def __len__(self):
+        current_node = self.head
+        count = 0
+        while current_node:
+            current_node = current_node.next
+            count+=1
+
+        return count
+
 
     def print_queue(self):
         """Method to print the queue"""
@@ -60,20 +84,21 @@ class Node:
 q = Queue()
 q.print_queue()
 
-q.push(Node(1))
-q.push(Node(2))
-q.push(Node(3))
-q.push(Node(4))
-q.push(Node(5))
+q.enqueue(Node(1))
+q.enqueue(Node(2))
+q.enqueue(Node(3))
+q.enqueue(Node(4))
+q.enqueue(Node(5))
+print('Length of queue is: ',  str(len(q)))
 q.print_queue()
 
-q.pop()
-q.pop()
-q.pop()
+q.dequeue()
+q.dequeue()
+q.dequeue()
 q.print_queue()
 
-q.pop()
-q.pop()
+q.dequeue()
+q.dequeue()
 q.print_queue()
 
 q.print_queue()
