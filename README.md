@@ -5,3 +5,4 @@ Implementation of:
 * Queue
 * Linked List
 * Binary Tree
+* Binary Search Tree
