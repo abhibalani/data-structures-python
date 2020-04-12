@@ -10,7 +10,7 @@ class Node:
         self.right = None
 
 
-class Queue:
+class Queue1:
     """Queue for breadth first search"""
     def __init__(self):
         self.items = []
@@ -91,16 +91,16 @@ class BinaryTree:
         if not node:
             return
 
-        queue = Queue()
-        queue.enqueue(node)
+        queue1 = Queue1()
+        queue1.enqueue(node)
 
-        while len(queue) > 0:
-            traversal += str(queue.peek().data)
-            node = queue.dequeue()
+        while len(queue1) > 0:
+            traversal += str(queue1.peek().data)
+            node = queue1.dequeue()
             if node.left:
-                queue.enqueue(node.left)
+                queue1.enqueue(node.left)
             if node.right:
-                queue.enqueue(node.right)
+                queue1.enqueue(node.right)
 
         return traversal
 
