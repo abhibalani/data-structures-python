@@ -104,6 +104,27 @@ class BinaryTree:
 
         return traversal
 
+    def height(self, node):
+        """
+        Method to calculate height of binary tree
+        :param node: node from which the height to be calculated
+        :return: height of the tree (int)
+        """
+        if not node:
+            return -1
+
+        height_left = self.height(node.left)
+        height_right = self.height(node.right)
+
+        return 1 + max(height_left, height_right)
+
+    def size(self, node):
+
+        if not node:
+            return 0
+
+        return 1 + self.size(node.left) + self.size(node.right)
+
 
 btree = BinaryTree(Node(1))
 btree.root.left = Node(2)

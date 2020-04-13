@@ -99,6 +99,13 @@ class BinarySearchTree:
 
         return 1 + max(height_left, height_right)
 
+    def size(self, node):
+
+        if not node:
+            return 0
+
+        return 1 + self.size(node.left) + self.size(node.right)
+
 
 bst = BinarySearchTree()
 
@@ -122,3 +129,7 @@ bst.find(5)
 height = bst.height(bst.root)
 
 print('Tree height is: ', str(height))
+
+size = bst.size(bst.root)
+
+print('Tree size is: ', str(size))
