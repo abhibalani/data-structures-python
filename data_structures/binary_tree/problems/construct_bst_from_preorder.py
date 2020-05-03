@@ -12,12 +12,11 @@ class Node:
         self.left = None
         self.right = None
 
-def construct_tree_helper(root, )
-def construct_tree(preorder):
-
-
-
-
+# def construct_tree_helper(root, )
+# def construct_tree(preorder):
+#     pass
+#
+#
 
 def printInorder(node):
     if node is None:
